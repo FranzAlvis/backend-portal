@@ -1,9 +1,9 @@
 export class CreateNoticiaDTO {
   titulo: string;
   descripcion: string;
-  fechaCreacion: string;
-  categoria: string;
-  departamento: string;
+  fechaCreacion: Date;
+  idCategoria: string;
+  idDepartamento: string;
   autor: string;
   imagen: string;
   banner: boolean;
@@ -11,9 +11,9 @@ export class CreateNoticiaDTO {
 export class UpdateNoticiaDTO {
   titulo?: string;
   descripcion?: string;
-  fechaCreacion?: string;
-  categoria?: string;
-  departamento?: string;
+  fechaCreacion?: Date;
+  idCategoria?: string;
+  idDepartamento?: string;
   autor?: string;
   imagen?: string;
   banner?: boolean;

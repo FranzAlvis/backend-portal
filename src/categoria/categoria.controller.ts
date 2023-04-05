@@ -11,7 +11,7 @@ import { CategoriaService } from './categoria.service';
 import { CreateCategoriaDTO, UpdateCategoriaDTO } from './dto/categoria.dto';
 import { Categoria } from './entities/Categoria';
 
-@Controller('categoria')
+@Controller('categorias')
 export class CategoriaController {
   constructor(private categoriaService: CategoriaService) {}
 
@@ -28,11 +28,11 @@ export class CategoriaController {
     return this.categoriaService.postCategoria(request);
   }
   @Delete(':id')
-  async deleteCar(@Param('id') id: string) {
+  async deleteCategoria(@Param('id') id: string) {
     return this.categoriaService.deleteCategoriaById(id);
   }
   @Put(':id')
-  async updateCar(
+  async updateCategoria(
     @Param('id') id: string,
     @Body() request: UpdateCategoriaDTO,
   ) {

@@ -1,4 +1,11 @@
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import { Noticia } from 'src/noticia/entities/noticia.entity';
+import {
+  Entity,
+  Column,
+  PrimaryGeneratedColumn,
+  JoinColumn,
+  OneToMany,
+} from 'typeorm';
 
 @Entity({ name: 'categorias' })
 export class Categoria {
@@ -10,4 +17,8 @@ export class Categoria {
 
   @Column({ default: '' })
   abreviatura: string;
+
+  @JoinColumn()
+  @OneToMany(() => Noticia, (noticia) => noticia.idCategoria)
+  noticia: Noticia[];
 }

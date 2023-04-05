@@ -14,7 +14,7 @@ import {
 } from './dto/departamento.dto';
 import { Departamento } from './entities/Departamento';
 
-@Controller('departamento')
+@Controller('departamentos')
 export class DepartamentoController {
   constructor(private departamentoService: DepartamentoService) {}
 
@@ -31,11 +31,11 @@ export class DepartamentoController {
     return this.departamentoService.postDepartamento(request);
   }
   @Delete(':id')
-  async deleteCar(@Param('id') id: string) {
+  async deleteDepartamento(@Param('id') id: string) {
     return this.departamentoService.deleteDepartamentoById(id);
   }
   @Put(':id')
-  async updateCar(
+  async updateDepartamento(
     @Param('id') id: string,
     @Body() request: UpdateDepartamentoDTO,
   ) {
